@@ -11,7 +11,14 @@ struct ContentView: View {
     
     var body: some View {
         VStack{
-            Text("Name")
+            NavigationView {
+                NavigationLink(destination: loginView()) {
+                        Text("Login")
+                    }
+                NavigationLink(destination: registerView()) {
+                        Text("Register")
+                    }
+            }
         }
     }
 }

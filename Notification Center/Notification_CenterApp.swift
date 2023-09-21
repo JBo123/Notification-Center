@@ -6,12 +6,21 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseCore
+import Firebase
 
 @main
 struct Notification_CenterApp: App {
+
+    init() {
+           FirebaseApp.configure()
+       }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //ContentView()
+            AddNotificationView()
         }
     }
 }

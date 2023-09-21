@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 //import FirebaseAuth
 
 struct loginView: View {
@@ -31,6 +32,9 @@ struct loginView: View {
                             // Handle the error
                             print(error)
                         } else {
+                        NavigationLink(destination: NotificationAddView()) {
+                                Text("Login")
+                            }
                             // The user is successfully authenticated
                             // Navigate to the next screen
                         }
