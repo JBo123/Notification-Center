@@ -32,7 +32,7 @@ struct loginView: View {
                             // Handle the error
                             print(error)
                         } else {
-                        NavigationLink(destination: NotificationAddView()) {
+                        NavigationLink(destination: AddNotificationView()) {
                                 Text("Login")
                             }
                             // The user is successfully authenticated
