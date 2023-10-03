@@ -7,18 +7,22 @@
 
 import SwiftUI
 import FirebaseAuth
-//import FirebaseAuth
 
 struct loginView: View {
 
     @State private var email = ""
     @State private var password = ""
+    @State private var errorMessage = ""
+    @State private var isLoggedIn = false
 
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Email")) {
                     TextField("Enter your email", text: $email)
+                        .textContentType(.none)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
                 }
 
                 Section(header: Text("Password")) {
@@ -26,24 +30,40 @@ struct loginView: View {
                 }
 
                 Button(action: {
-                    // Authenticate the user
                     Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
                         if let error = error {
-                            // Handle the error
-                            print(error)
+                            errorMessage = error.localizedDescription
                         } else {
-                        NavigationLink(destination: AddNotificationView()) {
-                                Text("Login")
-                            }
-                            // The user is successfully authenticated
-                            // Navigate to the next screen
+                            // Update the login state when successful
+                            isLoggedIn = true
                         }
                     }
                 }) {
                     Text("Login")
                 }
+                .disabled(isLoggedIn) // Disable the button when the user is logged in
+
+                // Use the NavigationLink with an if statement to conditionally navigate
+                if isLoggedIn {
+                    NavigationLink(destination: AddNotificationView()) {
+                        // This is an empty view; you can use any view you prefer
+                    }
+                }
+                Section(header: Text("Haven't Loged in yet?")) {
+           
+                        NavigationLink(destination: registerView()) {
+                            Text("Register")
+                        }
+                        
+
+                }
+                
             }
             .navigationTitle("Login")
+            
+            NavigationLink(destination: registerView()) {
+                    Text("Register")
+                }
         }
     }
 }

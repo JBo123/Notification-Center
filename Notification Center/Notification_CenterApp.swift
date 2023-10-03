@@ -20,7 +20,8 @@ struct Notification_CenterApp: App {
     var body: some Scene {
         WindowGroup {
             //ContentView()
-            AddNotificationView()
+            //AddNotificationView()
+            loginView()
         }
     }
 }
