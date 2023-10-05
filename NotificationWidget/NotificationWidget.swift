@@ -40,11 +40,25 @@ struct SimpleEntry: TimelineEntry {
     let configuration: ConfigurationIntent
 }
 
-struct NotificationWidgetEntryView : View {
+struct NotificationWidgetEntryView : View { //Here you change look
+    
+    var markedNotification: String = "Denis should take out trash"
+    
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
+        VStack{
+                  ZStack{
+                      ContainerRelativeShape()
+                          .fill(.white.gradient)
+                          .cornerRadius(10)
+                      Text(markedNotification)
+                          .font(.headline)
+                          .fontWeight(.bold)
+                          .shadow(radius: 1)
+                      //Text(entry.date, style: .time)
+                  }
+              }
     }
 }
 

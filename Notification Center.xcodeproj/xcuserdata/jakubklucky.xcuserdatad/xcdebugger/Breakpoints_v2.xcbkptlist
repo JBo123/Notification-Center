@@ -36,5 +36,53 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD323954-1F23-4994-8442-23BEB0D309CF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Notification Center/Notifications/Notification.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "addNotification(notificationText:secondsUntilNotification:alertTitle:alertMessage:showAlert:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CD323954-1F23-4994-8442-23BEB0D309CF - 6aea42f2c3058586"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Notification_Center.Notification.addNotification(notificationText: Swift.String, secondsUntilNotification: Swift.String, alertTitle: Swift.String, alertMessage: Swift.String, showAlert: Swift.Bool) -&gt; ()"
+                  moduleName = "Notification Center"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jakubklucky/Library/Mobile%20Documents/com~apple~CloudDocs/Projects/SWIFT/Notification%20Center/Notification%20Center/Notifications/Notification.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "484">
+               </Location>
+               <Location
+                  uuid = "CD323954-1F23-4994-8442-23BEB0D309CF - 6aea42f2c3058586"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Notification_Center.Notification.addNotification(notificationText: Swift.String, secondsUntilNotification: Swift.String, alertTitle: Swift.String, alertMessage: Swift.String, showAlert: Swift.Bool) -&gt; ()"
+                  moduleName = "Notification Center"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jakubklucky/Library/Mobile%20Documents/com~apple~CloudDocs/Projects/SWIFT/Notification%20Center/Notification%20Center/Notifications/Notification.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "1040">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

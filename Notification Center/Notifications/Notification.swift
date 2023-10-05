@@ -15,8 +15,8 @@ class Notification {
                          alertMessage: String,
                          showAlert: Bool) -> Void {
         
-        var notificationText = notificationText
-        var secondsUntilNotification = secondsUntilNotification
+        let notificationText = notificationText
+        let secondsUntilNotification = secondsUntilNotification
 
         var alertTitle = alertTitle
         var alertMessage = alertMessage
