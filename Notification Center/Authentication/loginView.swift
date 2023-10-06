@@ -16,7 +16,7 @@ struct loginView: View {
     @State private var isLoggedIn = false
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 Section(header: Text("Email")) {
                     TextField("Enter your email", text: $email)
@@ -29,18 +29,20 @@ struct loginView: View {
                     SecureField("Enter your password", text: $password)
                 }
 
-                Button(action: {
-                    Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
-                        if let error = error {
-                            errorMessage = error.localizedDescription
-                        } else {
-                            // Update the login state when successful
-                            isLoggedIn = true
+                
+                    Button(action: {
+                        Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
+                            if let error = error {
+                                errorMessage = error.localizedDescription
+                            } else {
+                                // Update the login state when successful
+                                isLoggedIn = true
+                            }
                         }
+                    }) {
+                        Text("Login")
                     }
-                }) {
-                    Text("Login")
-                }
+                
                 .disabled(isLoggedIn) // Disable the button when the user is logged in
 
                 // Use the NavigationLink with an if statement to conditionally navigate
@@ -54,16 +56,11 @@ struct loginView: View {
                         NavigationLink(destination: registerView()) {
                             Text("Register")
                         }
-                        
-
                 }
                 
             }
             .navigationTitle("Login")
-            
-            NavigationLink(destination: registerView()) {
-                    Text("Register")
-                }
+        
         }
     }
 }

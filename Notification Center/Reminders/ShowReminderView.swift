@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct AddReminderView: View {
+struct ShowReminderView: View {
     @State var reminders: [String]
-    @State var wasSuccesful: Bool
+    @State var wasSuccesful: Bool = false
     
     var body: some View {
         if reminders.isEmpty {
@@ -34,8 +34,8 @@ struct AddReminderView: View {
 }
 
 
-struct AddReminderView_Previews: PreviewProvider {
+struct ShowReminderView_Previews: PreviewProvider {
     static var previews: some View {
-        AddReminderView(reminders: ["xd", "xd2"], wasSuccesful: true)
+        ShowReminderView(reminders: ["xd", "xd2"], wasSuccesful: true)
     }
 }

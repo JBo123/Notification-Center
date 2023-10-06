@@ -8,7 +8,7 @@
 import SwiftUI
 import Firebase
 import FirebaseCore
-import Firebase
+import FirebaseAuth
 
 @main
 struct Notification_CenterApp: App {
@@ -18,10 +18,17 @@ struct Notification_CenterApp: App {
        }
     
     var body: some Scene {
+        
         WindowGroup {
+            if Auth.auth().currentUser != nil {
+               // AddNotificationView()
+                AddReminderView()
+            } else {
+                loginView()
+            }
+            
             //ContentView()
             //AddNotificationView()
-            loginView()
         }
     }
 }

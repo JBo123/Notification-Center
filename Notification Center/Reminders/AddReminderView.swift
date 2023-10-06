@@ -8,8 +8,31 @@
 import SwiftUI
 
 struct AddReminderView: View {
+    @State var input: String = ""
+    @State var reminders: [String] = []
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            Form {
+                Section(header: Text("Email")) {
+                    TextField("Enter your email", text: $input)
+                        .textContentType(.none)
+                }
+                Button("Add", action: {
+                    reminders.append(input)
+                })
+                
+
+                NavigationLink {
+                    ShowReminderView(reminders: reminders)
+                } label: {
+                    Text("Show Reminders")
+                }
+
+
+            }
+            .navigationTitle("Register")
+        }
     }
 }
 
