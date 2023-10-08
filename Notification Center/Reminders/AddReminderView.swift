@@ -8,30 +8,41 @@
 import SwiftUI
 
 struct AddReminderView: View {
+    @State var wasSuccesful = false
     @State var input: String = ""
-    @State var reminders: [String] = []
+    @State var reminders: String = ""
+    @State var remindersList: [String] = []
+
     
     var body: some View {
         NavigationView{
             Form {
-                Section(header: Text("Email")) {
-                    TextField("Enter your email", text: $input)
+                Section(header: Text("Reminder")) {
+                    TextField("Write here...", text: $input)
                         .textContentType(.none)
                 }
                 Button("Add", action: {
-                    reminders.append(input)
+                    remindersList =  returnListOfReminders()
+                    remindersList.append(input)
+                    saveListOfReminders(reminders: remindersList)
+                        wasSuccesful.toggle()
+                    
                 })
+                .alert(isPresented: $wasSuccesful) {
+                    Alert(title: Text("Reminder"), message: Text("Message Added"), dismissButton: .default(Text("OK")))
+                    
+                }
                 
 
                 NavigationLink {
-                    ShowReminderView(reminders: reminders)
+                    ShowReminderView()
                 } label: {
                     Text("Show Reminders")
                 }
 
 
             }
-            .navigationTitle("Register")
+            .navigationTitle("Add Reminder")
         }
     }
 }

@@ -47,7 +47,7 @@ struct loginView: View {
 
                 // Use the NavigationLink with an if statement to conditionally navigate
                 if isLoggedIn {
-                    NavigationLink(destination: AddNotificationView()) {
+                    NavigationLink(destination: HomeView()) {
                         // This is an empty view; you can use any view you prefer
                     }
                 }

@@ -7,33 +7,39 @@
 
 import Foundation
 
-func saveListOfReminders(reminders: [String]) -> Bool {
+func saveStringtOfReminders(reminders: String ) {
+    let defaults = UserDefaults.standard
+    defaults.set(reminders, forKey: "RemindersString")
+
+}
+
+func saveListOfReminders(reminders: [String] ) {
     let defaults = UserDefaults.standard
     defaults.set(reminders, forKey: "RemindersArray")
-    
-    let didSave = defaults.synchronize()
-    
-    if didSave {
-        
-        return true
-        
-    } else {
-        
-        return false
-    }
+
 }
 enum ReminderError: Error {
     case retrievalFailure
 }
 
-func returnListOfReminders() throws -> [String] {
+func returnStringOfReminders() throws -> String {
     let defaults = UserDefaults.standard
-    if let reminders = defaults.array(forKey: "RemindersArray") as? [String] {
+    if let reminders = defaults.string(forKey: "RemindersString") as? String {
         
         return reminders
+        
         
     } else {
         
         throw ReminderError.retrievalFailure
     }
+}
+func returnListOfReminders()  -> [String] {
+    let defaults = UserDefaults.standard
+    guard let reminders = defaults.stringArray(forKey: "RemindersArray") else{ return ["error"]}
+        
+        return reminders
+        
+        
+   
 }

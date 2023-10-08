@@ -37,6 +37,7 @@
 		6E92A70C2AD06CDE009C6370 /* ShowReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92A70B2AD06CDE009C6370 /* ShowReminderView.swift */; };
 		6E92A70F2AD06E13009C6370 /* LocalSaveReminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92A70E2AD06E13009C6370 /* LocalSaveReminders.swift */; };
 		6E92A7112AD07C28009C6370 /* AddReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92A7102AD07C28009C6370 /* AddReminderView.swift */; };
+		6E92A7142AD2B74D009C6370 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92A7132AD2B74D009C6370 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		6E92A70B2AD06CDE009C6370 /* ShowReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowReminderView.swift; sourceTree = "<group>"; };
 		6E92A70E2AD06E13009C6370 /* LocalSaveReminders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSaveReminders.swift; sourceTree = "<group>"; };
 		6E92A7102AD07C28009C6370 /* AddReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderView.swift; sourceTree = "<group>"; };
+		6E92A7132AD2B74D009C6370 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 		6E71978C2AB820B300DFB39F /* Notification Center */ = {
 			isa = PBXGroup;
 			children = (
+				6E92A7122AD2B73A009C6370 /* Home */,
 				6E92A7092AD06C82009C6370 /* Reminders */,
 				6E5F313C2ABC4853006CA169 /* Authentication */,
 				6E71978D2AB820B300DFB39F /* Notification_CenterApp.swift */,
@@ -215,6 +218,14 @@
 				6E92A70E2AD06E13009C6370 /* LocalSaveReminders.swift */,
 			);
 			path = DataSave;
+			sourceTree = "<group>";
+		};
+		6E92A7122AD2B73A009C6370 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				6E92A7132AD2B74D009C6370 /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +349,7 @@
 				6E92A70C2AD06CDE009C6370 /* ShowReminderView.swift in Sources */,
 				6E5F313E2ABC48DA006CA169 /* Notification.swift in Sources */,
 				6E71979C2AB821E600DFB39F /* loginView.swift in Sources */,
+				6E92A7142AD2B74D009C6370 /* HomeView.swift in Sources */,
 				6E71978E2AB820B300DFB39F /* Notification_CenterApp.swift in Sources */,
 				6E92A70F2AD06E13009C6370 /* LocalSaveReminders.swift in Sources */,
 				6E5F313A2ABC3D61006CA169 /* AddNotificationView.swift in Sources */,

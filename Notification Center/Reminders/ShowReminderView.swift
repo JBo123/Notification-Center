@@ -8,27 +8,33 @@
 import SwiftUI
 
 struct ShowReminderView: View {
-    @State var reminders: [String]
+    @State var singleReminder = ""
+    @State var reminders: [String] = []
     @State var wasSuccesful: Bool = false
     
     var body: some View {
-        if reminders.isEmpty {
-            Text("neco se posralo bro")
-        } else {
-            List {
-                ForEach(reminders, id: \.self) { reminder in
-                    Text(reminder)
+      VStack{
+                List {
+                    ForEach(reminders, id: \.self) { reminder in
+                        Text(reminder)
+                    }
+                   //Text(singleReminder)
                 }
+          Button("Show Reminders", action: {
+                    if !reminders.isEmpty{
+                    //    wasSuccesful = saveListOfReminders(reminders: reminders)
+                    }
+                    do{
+                        try reminders =  returnListOfReminders()
+                        //try singleReminder = returnStringOfReminders()
+                        
+                    } catch {
+                        print("An error occurred: \(error)")
+                    }
+                    
+                })
             }
-            .task {
-                wasSuccesful = saveListOfReminders(reminders: reminders)
-                do{ try await reminders =  returnListOfReminders()}
-                catch{
-                    print("An error occurred: \(error)")
-                }
-                
-            }
-        }
+        
         
     }
 }

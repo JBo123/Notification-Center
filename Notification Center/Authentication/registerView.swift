@@ -31,7 +31,7 @@ struct registerView: View {
                             // Handle the error
                             print(error)
                         } else {
-                        NavigationLink(destination: AddNotificationView()) {
+                        NavigationLink(destination: HomeView()) {
                                 Text("register")
                             }
                         }

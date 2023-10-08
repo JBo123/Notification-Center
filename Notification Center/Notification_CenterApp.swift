@@ -21,8 +21,8 @@ struct Notification_CenterApp: App {
         
         WindowGroup {
             if Auth.auth().currentUser != nil {
-               // AddNotificationView()
-                AddReminderView()
+               HomeView()
+                
             } else {
                 loginView()
             }
