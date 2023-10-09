@@ -22,9 +22,10 @@ struct AddReminderView: View {
                         .textContentType(.none)
                 }
                 Button("Add", action: {
-                    remindersList =  returnListOfReminders()
-                    remindersList.append(input)
-                    saveListOfReminders(reminders: remindersList)
+                    //remindersList =  returnListOfReminders()
+                    //remindersList.append(input)
+                    //saveListOfReminders(reminders: remindersList)
+                    addToListOfReminders(reminders: remindersList, input: input)
                         wasSuccesful.toggle()
                     
                 })

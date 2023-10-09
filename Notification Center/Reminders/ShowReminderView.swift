@@ -17,20 +17,18 @@ struct ShowReminderView: View {
                 List {
                     ForEach(reminders, id: \.self) { reminder in
                         Text(reminder)
+                    }.onDelete { indexSet in
+                        //contacts.remove(atOffsets: indexSet)
+                        deleteFromListOfReminders(reminders: reminders,
+                                                  indexSet: indexSet)
                     }
                    //Text(singleReminder)
                 }
           Button("Show Reminders", action: {
-                    if !reminders.isEmpty{
-                    //    wasSuccesful = saveListOfReminders(reminders: reminders)
-                    }
-                    do{
-                        try reminders =  returnListOfReminders()
+
+                   reminders =  returnListOfReminders()
                         //try singleReminder = returnStringOfReminders()
-                        
-                    } catch {
-                        print("An error occurred: \(error)")
-                    }
+                 
                     
                 })
             }
