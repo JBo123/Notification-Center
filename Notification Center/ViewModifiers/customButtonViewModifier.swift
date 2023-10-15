@@ -6,3 +6,20 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct CustomButtonStyle: ViewModifier {
+    
+    func body(content: Content) -> some View {
+        content
+            .foregroundColor(.white)
+            .background(Color.blue)
+            .frame(height: 50)
+            .frame(maxWidth: .infinity)
+            .padding()
+            .cornerRadius(10)
+        
+            
+    }
+    
+}

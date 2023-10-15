@@ -16,18 +16,15 @@ struct ChoseNotificationView: View {
         NavigationView{
         
             
-            Form{
+         
                 //TODO: finish this picker for selection of three views based on wich type of notification user wants to add video rresource swiftful thinking notification video than add it .popover and somehow manage to make shownotification work
                 Picker(selection: $selectedView, content: {
-                    Text("View 1").tag()
-                                Text("View 2")
-                                Text("View 3")
+                    Text("View 1").tag(NotificationBasedOnDateView())
+                    Text("View 2").tag(NotificationBasedOnTimeView())
+                    Text("View 3").tag(NotificationBasedOnLocationView())
                             })
-                .onAppear {
-                                   // Display the picker
-                                   self.selectedView = 0
-                               }
-                Section(header: Text("Pick Date")) {
+
+            /*    Section(header: Text("Pick Date")) {
                     DatePicker(
                         "Pick a date:",
                         selection: $currentDate,
@@ -35,9 +32,9 @@ struct ChoseNotificationView: View {
                         displayedComponents: [.hourAndMinute, .date]
                     )
                 }
-            }
+            }*/
             
-                Section {
+       
                     Button("Add Notification") {
                         present.toggle()
                         print(currentDate.timeIntervalSinceNow)
@@ -51,14 +48,14 @@ struct ChoseNotificationView: View {
                     } label: {
                         Text("Show Notifications")
                     }
-                }
+                
             }
         }
     }
 }
 
-struct AddNotificationView_Previews: PreviewProvider {
+struct ChoseNotificationView_Previews: PreviewProvider {
     static var previews: some View {
-        AddNotificationView()
+        ChoseNotificationView()
     }
 }

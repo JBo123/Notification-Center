@@ -18,19 +18,14 @@ struct ShowReminderView: View {
                     ForEach(reminders, id: \.self) { reminder in
                         Text(reminder)
                     }.onDelete { indexSet in
-                        //contacts.remove(atOffsets: indexSet)
                         deleteFromListOfReminders(reminders: reminders,
                                                   indexSet: indexSet)
                     }
-                   //Text(singleReminder)
                 }
-          Button("Show Reminders", action: {
-
-                   reminders =  returnListOfReminders()
-                        //try singleReminder = returnStringOfReminders()
-                 
-                    
-                })
+                .onAppear(){
+                    reminders =  returnListOfReminders()
+                }
+       
             }
         
         

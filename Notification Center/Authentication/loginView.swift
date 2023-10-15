@@ -20,9 +20,7 @@ struct loginView: View {
             Form {
                 Section(header: Text("Email")) {
                     TextField("Enter your email", text: $email)
-                        .textContentType(.none)
-                        .disableAutocorrection(true)
-                        .autocapitalization(.none)
+                        .emailTFModifier()
                 }
 
                 Section(header: Text("Password")) {

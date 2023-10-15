@@ -13,7 +13,7 @@ struct NotificationBasedOnTimeView: View {
     }
 }
 
-struct NotificationBasedOnTime_Previews: PreviewProvider {
+struct NotificationBasedOnTimeView_Previews: PreviewProvider {
     static var previews: some View {
         NotificationBasedOnTimeView()
     }

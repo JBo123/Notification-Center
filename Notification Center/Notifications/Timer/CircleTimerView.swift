@@ -7,9 +7,31 @@
 
 import SwiftUI
 
+//final class Presenter: ObservableObject {
+//
+//    @Published var viewModel: ViewModel
+//
+//    init() {
+//
+//        self.viewModel = ViewModel(progressValue: 0)
+//    }
+//
+//    func onTap() {
+//
+//
+//    }
+//}
+//
+//struct ViewModel {
+//
+//    var progressValue: Double
+//}
+
 struct CircleTimerView: View {
+    //@ObservedObject var presenter = Presenter()
     @AppStorage("streak") var streak = 0
-    @State var progressBarValue = 0.00
+    @State var progressBarValue = 1.00
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State var reminderTime: Date
     var body: some View {
         
@@ -43,7 +65,7 @@ struct CircleTimerView: View {
                 .padding(.horizontal, 40)
                 
                 Button("xd") {
-                progressBarValue += 0.01
+                progressBarValue -= 0.01
                 }
                 .padding()
             }

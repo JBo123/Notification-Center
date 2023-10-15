@@ -40,7 +40,12 @@
 		6E92A7142AD2B74D009C6370 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92A7132AD2B74D009C6370 /* HomeView.swift */; };
 		6E92A7162AD3E3A4009C6370 /* ShowNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92A7152AD3E3A4009C6370 /* ShowNotificationView.swift */; };
 		6E92A7192AD69025009C6370 /* CircleTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92A7182AD69025009C6370 /* CircleTimerView.swift */; };
-		6E92A71B2AD69B85009C6370 /* AddNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92A71A2AD69B85009C6370 /* AddNotificationView.swift */; };
+		6E92A71B2AD69B85009C6370 /* ChoseNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92A71A2AD69B85009C6370 /* ChoseNotificationView.swift */; };
+		6E92A71E2ADADE7B009C6370 /* emailTextFieldViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92A71D2ADADE7B009C6370 /* emailTextFieldViewModifier.swift */; };
+		6E92A7202ADC0F35009C6370 /* customButtonViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92A71F2ADC0F35009C6370 /* customButtonViewModifier.swift */; };
+		6E92A7242ADC7E70009C6370 /* NotificationBasedOnTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92A7232ADC7E70009C6370 /* NotificationBasedOnTimeView.swift */; };
+		6E92A7262ADC7E87009C6370 /* NotificationBasedOnDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92A7252ADC7E87009C6370 /* NotificationBasedOnDateView.swift */; };
+		6E92A7282ADC7E9C009C6370 /* NotificationBasedOnLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92A7272ADC7E9C009C6370 /* NotificationBasedOnLocationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,7 +98,12 @@
 		6E92A7132AD2B74D009C6370 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		6E92A7152AD3E3A4009C6370 /* ShowNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowNotificationView.swift; sourceTree = "<group>"; };
 		6E92A7182AD69025009C6370 /* CircleTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTimerView.swift; sourceTree = "<group>"; };
-		6E92A71A2AD69B85009C6370 /* AddNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotificationView.swift; sourceTree = "<group>"; };
+		6E92A71A2AD69B85009C6370 /* ChoseNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseNotificationView.swift; sourceTree = "<group>"; };
+		6E92A71D2ADADE7B009C6370 /* emailTextFieldViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emailTextFieldViewModifier.swift; sourceTree = "<group>"; };
+		6E92A71F2ADC0F35009C6370 /* customButtonViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customButtonViewModifier.swift; sourceTree = "<group>"; };
+		6E92A7232ADC7E70009C6370 /* NotificationBasedOnTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBasedOnTimeView.swift; sourceTree = "<group>"; };
+		6E92A7252ADC7E87009C6370 /* NotificationBasedOnDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBasedOnDateView.swift; sourceTree = "<group>"; };
+		6E92A7272ADC7E9C009C6370 /* NotificationBasedOnLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBasedOnLocationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,11 +138,12 @@
 		6E5F313B2ABC4821006CA169 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				6E92A7222ADC7E10009C6370 /* PopoverViews */,
 				6E92A7172AD68FFB009C6370 /* Timer */,
 				6E5F313D2ABC48DA006CA169 /* Notification.swift */,
 				6E5F31392ABC3D61006CA169 /* OldAddNotificationView.swift */,
 				6E92A7152AD3E3A4009C6370 /* ShowNotificationView.swift */,
-				6E92A71A2AD69B85009C6370 /* AddNotificationView.swift */,
+				6E92A71A2AD69B85009C6370 /* ChoseNotificationView.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -168,6 +179,7 @@
 		6E71978C2AB820B300DFB39F /* Notification Center */ = {
 			isa = PBXGroup;
 			children = (
+				6E92A71C2ADADC11009C6370 /* ViewModifiers */,
 				6E92A7122AD2B73A009C6370 /* Home */,
 				6E92A7092AD06C82009C6370 /* Reminders */,
 				6E5F313C2ABC4853006CA169 /* Authentication */,
@@ -243,6 +255,25 @@
 				6E92A7182AD69025009C6370 /* CircleTimerView.swift */,
 			);
 			path = Timer;
+			sourceTree = "<group>";
+		};
+		6E92A71C2ADADC11009C6370 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				6E92A71D2ADADE7B009C6370 /* emailTextFieldViewModifier.swift */,
+				6E92A71F2ADC0F35009C6370 /* customButtonViewModifier.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		6E92A7222ADC7E10009C6370 /* PopoverViews */ = {
+			isa = PBXGroup;
+			children = (
+				6E92A7232ADC7E70009C6370 /* NotificationBasedOnTimeView.swift */,
+				6E92A7252ADC7E87009C6370 /* NotificationBasedOnDateView.swift */,
+				6E92A7272ADC7E9C009C6370 /* NotificationBasedOnLocationView.swift */,
+			);
+			path = PopoverViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,16 +396,21 @@
 				6E7197B52AB9AD5900DFB39F /* registerView.swift in Sources */,
 				6E92A70C2AD06CDE009C6370 /* ShowReminderView.swift in Sources */,
 				6E5F313E2ABC48DA006CA169 /* Notification.swift in Sources */,
+				6E92A7282ADC7E9C009C6370 /* NotificationBasedOnLocationView.swift in Sources */,
 				6E92A7162AD3E3A4009C6370 /* ShowNotificationView.swift in Sources */,
+				6E92A7242ADC7E70009C6370 /* NotificationBasedOnTimeView.swift in Sources */,
+				6E92A71E2ADADE7B009C6370 /* emailTextFieldViewModifier.swift in Sources */,
 				6E71979C2AB821E600DFB39F /* loginView.swift in Sources */,
 				6E92A7142AD2B74D009C6370 /* HomeView.swift in Sources */,
-				6E92A71B2AD69B85009C6370 /* AddNotificationView.swift in Sources */,
+				6E92A71B2AD69B85009C6370 /* ChoseNotificationView.swift in Sources */,
 				6E71978E2AB820B300DFB39F /* Notification_CenterApp.swift in Sources */,
+				6E92A7202ADC0F35009C6370 /* customButtonViewModifier.swift in Sources */,
 				6E92A70F2AD06E13009C6370 /* LocalSaveReminders.swift in Sources */,
 				6E5F313A2ABC3D61006CA169 /* OldAddNotificationView.swift in Sources */,
 				6E92A7112AD07C28009C6370 /* AddReminderView.swift in Sources */,
 				6E92A7192AD69025009C6370 /* CircleTimerView.swift in Sources */,
 				6E92A7012ACECA46009C6370 /* NotificationWidget.intentdefinition in Sources */,
+				6E92A7262ADC7E87009C6370 /* NotificationBasedOnDateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

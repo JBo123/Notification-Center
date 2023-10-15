@@ -8,21 +8,13 @@
 import Foundation
 import SwiftUI
 
-struct SuccessfulAlert: ViewModifier {
-    
-    let title: String
-    let message: String
-    var wasSuccessful: Bool
+struct EmailTFModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .alert(isPresented: $wasSuccessful) {
-                
-                Alert(title: Text(title),
-                      message: Text(message),
-                      dismissButton: .default(Text("OK")))
-            }
-            
+            .textContentType(.none)
+            .disableAutocorrection(true)
+            .autocapitalization(.none)
     }
     
 }

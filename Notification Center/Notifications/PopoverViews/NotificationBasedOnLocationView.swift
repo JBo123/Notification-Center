@@ -13,7 +13,7 @@ struct NotificationBasedOnLocationView: View {
     }
 }
 
-struct NotificationBasedOnLocation_Previews: PreviewProvider {
+struct NotificationBasedOnLocationView_Previews: PreviewProvider {
     static var previews: some View {
         NotificationBasedOnLocationView()
     }

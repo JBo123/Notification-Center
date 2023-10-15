@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct AddReminderView: View {
     @State var wasSuccesful = false
     @State var input: String = ""
@@ -21,17 +22,22 @@ struct AddReminderView: View {
                     TextField("Write here...", text: $input)
                         .textContentType(.none)
                 }
-                Button("Add", action: {
+                Button(action: {
                     //remindersList =  returnListOfReminders()
                     //remindersList.append(input)
                     //saveListOfReminders(reminders: remindersList)
                     addToListOfReminders(reminders: remindersList, input: input)
                         wasSuccesful.toggle()
                     
+                }, label: {
+                    Text("Add")
                 })
+                
                 .alert(isPresented: $wasSuccesful) {
-                    Alert(title: Text("Reminder"), message: Text("Message Added"), dismissButton: .default(Text("OK")))
                     
+                    Alert(title: Text("Reminder"),
+                          message: Text("Message Added"),
+                          dismissButton: .default(Text("OK")))
                 }
                 
 

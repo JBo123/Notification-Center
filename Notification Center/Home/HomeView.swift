@@ -14,7 +14,7 @@ struct HomeView: View {
                 .tabItem{
                     Text("Reminders")
                 }
-            AddNotificationView()
+            ChoseNotificationView()
                 .tabItem{
                     Text("Notifications")
                 }
