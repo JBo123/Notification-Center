@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct NotificationBasedOnTimeView: View {
+    
+    @State var currentDate = Date()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        Form{
+            
+            Section("Pick a date"){
+                DatePicker("When be reminded",
+                           selection: $currentDate,
+                           displayedComponents: [.date, .hourAndMinute])
+                .pickerStyle(WheelPickerStyle())
+            }
+        }
+              
+            
+        
+        
     }
 }
 

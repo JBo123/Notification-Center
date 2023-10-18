@@ -46,6 +46,7 @@
 		6E92A7242ADC7E70009C6370 /* NotificationBasedOnTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92A7232ADC7E70009C6370 /* NotificationBasedOnTimeView.swift */; };
 		6E92A7262ADC7E87009C6370 /* NotificationBasedOnDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92A7252ADC7E87009C6370 /* NotificationBasedOnDateView.swift */; };
 		6E92A7282ADC7E9C009C6370 /* NotificationBasedOnLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92A7272ADC7E9C009C6370 /* NotificationBasedOnLocationView.swift */; };
+		6E92A72A2ADD24E5009C6370 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92A7292ADD24E5009C6370 /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		6E92A7232ADC7E70009C6370 /* NotificationBasedOnTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBasedOnTimeView.swift; sourceTree = "<group>"; };
 		6E92A7252ADC7E87009C6370 /* NotificationBasedOnDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBasedOnDateView.swift; sourceTree = "<group>"; };
 		6E92A7272ADC7E9C009C6370 /* NotificationBasedOnLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBasedOnLocationView.swift; sourceTree = "<group>"; };
+		6E92A7292ADD24E5009C6370 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				6E5F31392ABC3D61006CA169 /* OldAddNotificationView.swift */,
 				6E92A7152AD3E3A4009C6370 /* ShowNotificationView.swift */,
 				6E92A71A2AD69B85009C6370 /* ChoseNotificationView.swift */,
+				6E92A7292ADD24E5009C6370 /* NotificationManager.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 			files = (
 				6E7197902AB820B300DFB39F /* ContentView.swift in Sources */,
 				6E7197B52AB9AD5900DFB39F /* registerView.swift in Sources */,
+				6E92A72A2ADD24E5009C6370 /* NotificationManager.swift in Sources */,
 				6E92A70C2AD06CDE009C6370 /* ShowReminderView.swift in Sources */,
 				6E5F313E2ABC48DA006CA169 /* Notification.swift in Sources */,
 				6E92A7282ADC7E9C009C6370 /* NotificationBasedOnLocationView.swift in Sources */,

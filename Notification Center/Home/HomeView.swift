@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    
+    let Manager: NotificationManager = NotificationManager()
+    
     var body: some View {
         TabView{
             AddReminderView()
                 .tabItem{
                     Text("Reminders")
                 }
-            ChoseNotificationView()
+            ChoseNotificationView(Manager: Manager)
                 .tabItem{
                     Text("Notifications")
                 }
@@ -23,6 +27,8 @@ struct HomeView: View {
 }
 
 struct HomeView_Previews: PreviewProvider {
+    
+    
     static var previews: some View {
         HomeView()
     }
