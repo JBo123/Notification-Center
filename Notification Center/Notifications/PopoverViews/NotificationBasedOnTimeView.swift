@@ -15,13 +15,15 @@ struct NotificationBasedOnTimeView: View {
         
         Form{
             
-            Section("Pick a date"){
-                DatePicker("When be reminded",
+            Section("Pick time and date of the reminder"){
+                DatePicker("Reminder",
                            selection: $currentDate,
                            displayedComponents: [.date, .hourAndMinute])
                 .pickerStyle(WheelPickerStyle())
+    
             }
         }
+        .navigationTitle("Select Time")
               
             
         

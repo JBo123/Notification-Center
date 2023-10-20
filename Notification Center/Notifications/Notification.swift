@@ -7,9 +7,28 @@
 
 import Foundation
 import UserNotifications
-class Notification {
+
+class Notification: Identifiable, ObservableObject {
+    let id:UUID = UUID()
+    var title: String
+    var text: String
+    var date: Date() //TODO: make find hoew to make date dummy data
+    var secondsToNotify:Double//mabe it has to be INT
+    @Published var isPresented: Bool = false
     
-    func addNotification(notificationText: String,
+    init(title: String, text: String, date:Date){
+        self.title = title
+        self.text = text
+        self.date = date
+        self.secondsToNotify = date.timeIntervalSinceNow
+        
+    }
+    
+
+    
+}
+    
+  /*  func addNotification(notificationText: String,
                          secondsUntilNotification:String,
                          alertTitle: String,
                          alertMessage: String,
@@ -60,7 +79,7 @@ class Notification {
             }
         }
     }
-}
+}*/
 
 
 /*
