@@ -20,7 +20,7 @@ struct loginView: View {
             Form {
                 Section(header: Text("Email")) {
                     TextField("Enter your email", text: $email)
-                        .emailTFModifier()
+                        .plainTextField()
                 }
 
                 Section(header: Text("Password")) {

@@ -9,9 +9,9 @@ import SwiftUI
 import  FirebaseAuth
 
 extension View {
-    func emailTFModifier() -> some View{
+    func plainTextField() -> some View{
         
-        modifier(EmailTFModifier())
+        modifier(DisableAutocorrect())
     }
 }
 
@@ -24,7 +24,7 @@ struct registerView: View {
             Form {
                 Section(header: Text("Email")) {
                     TextField("Enter your email", text: $email)
-                        .emailTFModifier()
+                        .plainTextField()
                 }
 
                 Section(header: Text("Password")) {

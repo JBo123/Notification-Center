@@ -7,22 +7,30 @@
 
 import Foundation
 import UserNotifications
+                                                                            //24 hours from now
+var NotificationsDummyList: [Notification] = [
+    Notification(title: "1", date: Date(timeIntervalSinceNow: 60 * 60 * 24)),
+    Notification(title: "2", date: Date(timeIntervalSinceNow: 60 * 60 * 24)),
+    Notification(title: "3", date: Date(timeIntervalSinceNow: 60 * 60 * 24)),
+    Notification(title: "4", date: Date(timeIntervalSinceNow: 60 * 60 * 24)),
+    Notification(title: "5", date: Date(timeIntervalSinceNow: 60 * 60 * 24))
+]
 
-class Notification: Identifiable, ObservableObject {
+class Notification: Identifiable, ObservableObject, Codable {
     let id:UUID = UUID()
     var title: String
     var text: String
-    var date: Date() //TODO: make find hoew to make date dummy data
+    var date: Date
     var secondsToNotify:Double//mabe it has to be INT
-    @Published var isPresented: Bool = false
     
-    init(title: String, text: String, date:Date){
+    init(title: String = "No Title", text: String = "No description", date:Date){
         self.title = title
         self.text = text
         self.date = date
         self.secondsToNotify = date.timeIntervalSinceNow
         
     }
+    
     
 
     

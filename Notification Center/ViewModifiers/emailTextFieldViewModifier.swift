@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct EmailTFModifier: ViewModifier {
+struct DisableAutocorrect: ViewModifier {
     
     func body(content: Content) -> some View {
         content

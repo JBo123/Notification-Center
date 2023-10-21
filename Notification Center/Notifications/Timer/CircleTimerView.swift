@@ -32,7 +32,10 @@ struct CircleTimerView: View {
     @AppStorage("streak") var streak = 0
     @State var progressBarValue = 1.00
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State var reminderTime: Date
+    @State var secondsToNotify: Double
+//TODO: 1: devide seconds to niótify as 100 to get one piece of the circle
+//      2. make it one seccond every second  mminus
+    //  3. 
     var body: some View {
         
         
@@ -74,8 +77,10 @@ struct CircleTimerView: View {
     }
 }
 
+
+
 struct CircleTimerView_Previews: PreviewProvider {
     static var previews: some View {
-        CircleTimerView(reminderTime: Date())
+        CircleTimerView(secondsToNotify: 100)
     }
 }

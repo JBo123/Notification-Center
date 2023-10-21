@@ -10,11 +10,10 @@ import SwiftUI
 struct ShowNotificationView: View {
     
     let expireDate: Date = Date()
-    var notificationList: [Notification] = []
-    var notification: Notification
-    
-    init(notification: Notification) {
-        self.notification = notification
+    @State var notificationList: [Notification]
+
+    init(notificationList: [Notification]) {
+        self._notificationList = State(initialValue: notificationList)
     }
     
     var body: some View {
@@ -22,7 +21,11 @@ struct ShowNotificationView: View {
         List(notificationList) { notification in
             VStack{
                 HStack{
-                    
+                    VStack{
+                        Text(notification.title)
+                        Text(notification.text)
+                    }
+                    CircleTimerView(secondsToNotify: notification.secondsToNotify)
                 }
                 Button("..."){
                     
@@ -35,10 +38,8 @@ struct ShowNotificationView: View {
 
 struct ShowNotificationView_Previews: PreviewProvider {
     
-   @State static var notification = Notification(title: "DO DISHES", //this is maybe wrong (shouldnt be static imo)
-                                                 text: "this is description of the notification :!",
-                                                 date: Date())
+   
     static var previews: some View {
-        ShowNotificationView(notification: notification)
+        ShowNotificationView(notificationList: [])
     }
 }

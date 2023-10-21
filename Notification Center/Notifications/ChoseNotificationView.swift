@@ -12,26 +12,23 @@ import SwiftUI
 
 struct ChoseNotificationView: View {
     
-    let notificationManager: NotificationManager
  
+    @State var notificationList: [Notification] = []
     @State var currentDate: Date = Date()
     var closeRange = Calendar.current.date(byAdding: .year, value: -1, to: Date())!
     @State var present: Bool = false
     @State var selectedView: Int = 0
-    @State var ViewToPopOver: AnyView = AnyView(NotificationBasedOnTimeView())
+    @State var ViewToPopOver: AnyView? = nil
     
-    init(Manager: NotificationManager){
-        
-        notificationManager = Manager
-        
-    }
     
     var body: some View {
+        
         NavigationView{
         
             VStack{
+                
                 Spacer()
-                //TODO: finish this picker for selection of three views based on wich type of notification user wants to add video rresource swiftful thinking notification video than add it .popover and somehow manage to make shownotification work
+
                 Picker("Chose notification Type", selection: $selectedView, content: {
                     Text("By Time").tag(1)
                     Text("By Date").tag(2)
@@ -44,13 +41,13 @@ struct ChoseNotificationView: View {
                     
                     switch selectedView {
                     case 1:
-                      ViewToPopOver = AnyView(NotificationBasedOnTimeView())
+                      ViewToPopOver = AnyView(NotificationBasedOnTimeView(notificationList: notificationList))
                     case 2:
                         ViewToPopOver = AnyView(NotificationBasedOnDateView())
                     case 3:
                         ViewToPopOver = AnyView(NotificationBasedOnLocationView())
                     default:
-                        ViewToPopOver = AnyView(NotificationBasedOnTimeView())
+                        ViewToPopOver = AnyView(NotificationBasedOnTimeView(notificationList: notificationList))
                     }
                     
                     present.toggle()
@@ -62,7 +59,7 @@ struct ChoseNotificationView: View {
                 })
                 
                 NavigationLink {
-                    ShowNotificationView()
+                    ShowNotificationView(notificationList: notificationList)
                 } label: {
                     Text("Show Notifications")
                 }
@@ -71,7 +68,7 @@ struct ChoseNotificationView: View {
 
             }
             .onAppear {
-                notificationManager.requestAuthorization()
+                NotificationManager.shared.requestAuthorization()
             }
             }
         
@@ -79,11 +76,9 @@ struct ChoseNotificationView: View {
 }
 
 struct ChoseNotificationView_Previews: PreviewProvider {
-    
-    static let notifcationManager = NotificationManager()
-    
+        
     static var previews: some View {
         
-        ChoseNotificationView(Manager: notifcationManager)
+        ChoseNotificationView()
     }
 }

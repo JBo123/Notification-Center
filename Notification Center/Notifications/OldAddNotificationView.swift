@@ -15,7 +15,7 @@ struct OldAddNotificationView: View {
     @State private var showAlert = false
     @State private var alertTitle = ""
     @State private var alertMessage = ""
-    private var notification: Notification = Notification()
+  //  private var notification: Notification = Notification()
     var body: some View {
         NavigationView {
             
@@ -35,17 +35,17 @@ struct OldAddNotificationView: View {
                         }
                 }
                 Button("Start notification") {
-                    notification.addNotification(notificationText: notificationText,
+               /*     notification.addNotification(notificationText: notificationText,
                                                  secondsUntilNotification: secondsUntilNotification,
                                                  alertTitle: alertTitle, alertMessage: alertMessage,
-                                                 showAlert: showAlert)
+                                                 showAlert: showAlert)*/
                     showAlert.toggle()
                 }
                 .alert(isPresented: $showAlert) {
                     Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
                 }
                 NavigationLink {
-                    ShowNotificationView()
+                   // ShowNotificationView()
                 } label: {
                     Text("Show Notifications")
                 }

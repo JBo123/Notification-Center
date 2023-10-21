@@ -10,6 +10,7 @@ import UserNotifications
 
 class NotificationManager {
     
+    static let shared = NotificationManager()
     
     func requestAuthorization(){
         let options: UNAuthorizationOptions = [.alert, .sound, .badge]
@@ -22,7 +23,7 @@ class NotificationManager {
         }
     }
     
-    func scheduleNotificationByTime(title: String = "needed to do something but forgor to write it here",
+    func scheduleNotificationByTime(title: String = "forgor to write anything here",
                                     subtitle: String = "So now u r fucked",
                                     timeInterval: Double){
         

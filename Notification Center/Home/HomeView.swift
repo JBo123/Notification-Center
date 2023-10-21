@@ -9,16 +9,13 @@ import SwiftUI
 
 struct HomeView: View {
     
-    
-    let Manager: NotificationManager = NotificationManager()
-    
     var body: some View {
         TabView{
             AddReminderView()
                 .tabItem{
                     Text("Reminders")
                 }
-            ChoseNotificationView(Manager: Manager)
+            ChoseNotificationView()
                 .tabItem{
                     Text("Notifications")
                 }
