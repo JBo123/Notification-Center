@@ -18,21 +18,28 @@ struct ShowNotificationView: View {
     
     var body: some View {
        
-        List(notificationList) { notification in
-            VStack{
-                HStack{
-                    VStack{
-                        Text(notification.title)
-                        Text(notification.text)
+        NavigationView{
+            List(notificationList) { notification in
+                VStack(spacing: -5){
+                    HStack{
+                        VStack{
+                            Text(notification.title)
+                                .font(.title2)
+                            Text(notification.text)
+                                .font(.callout)
+                        }
+                        CircleTimerView(secondsToNotify: notification.secondsToNotify)
+                        
                     }
-                    CircleTimerView(secondsToNotify: notification.secondsToNotify)
-                }
-                Button("..."){
                     
+                }
+                .onTapGesture {
+                    NavigationLink(destination: DetailNotificationView(notification: notification), label: {
+                        Text("")
+                    })
                 }
             }
         }
-        
     }
 }
 
@@ -40,6 +47,6 @@ struct ShowNotificationView_Previews: PreviewProvider {
     
    
     static var previews: some View {
-        ShowNotificationView(notificationList: [])
+        ShowNotificationView(notificationList: NotificationsDummyList)
     }
 }

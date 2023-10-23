@@ -27,17 +27,20 @@ import SwiftUI
 //    var progressValue: Double
 //}
 
-struct CircleTimerView: View {
+struct CircleTimerViewCopy: View {
     //@ObservedObject var presenter = Presenter()
+    
     @AppStorage("streak") var streak = 0
     @State var progressBarValue = 1.00
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State var secondsToNotify: Double
+    @State var displayDate: Date
+    @State var displaySeconds: String = ""
+    
 //TODO: 1: devide seconds to niótify as 100 to get one piece of the circle
 //      2. make it one seccond every second  mminus
-    //  3. 
+    //  3. how to make seconds into minute and hours to time format...
     var body: some View {
-        
         
         ZStack{
             Color.black
@@ -57,7 +60,14 @@ struct CircleTimerView: View {
                         .rotationEffect(.degrees(-90))
                     
                     VStack{
-                        Text("4:36:58")
+                        Text(displaySeconds)
+                            .onReceive(Timer.publish(every: 1,
+                                                     on: .main,
+                                                     in: .common).autoconnect()) { _ in
+                                
+                                displaySeconds = subtractOneSecond(from: displaySeconds) ?? displaySeconds
+                                progressBarValue -= 1/secondsToNotify
+                            }
                             .font(.system(size: 50))
                     }
                     .foregroundStyle(.white)
@@ -67,11 +77,10 @@ struct CircleTimerView: View {
                 }
                 .padding(.horizontal, 40)
                 
-                Button("xd") {
-                progressBarValue -= 0.01
-                }
-                .padding()
             }
+        }
+        .onAppear(){
+            displaySeconds = convertSecondsToDate(seconds: Int(secondsToNotify))
         }
         
     }
@@ -79,8 +88,8 @@ struct CircleTimerView: View {
 
 
 
-struct CircleTimerView_Previews: PreviewProvider {
+struct CircleTimerViewCopy_Previews: PreviewProvider {
     static var previews: some View {
-        CircleTimerView(secondsToNotify: 100)
+        CircleTimerViewCopy(secondsToNotify: 1000.0, displayDate: Date(timeIntervalSinceNow: 60 * 60 * 24))
     }
 }

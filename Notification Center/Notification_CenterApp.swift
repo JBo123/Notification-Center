@@ -28,7 +28,11 @@ struct Notification_CenterApp: App {
             }
             
             //ContentView()
-            //AddNotificationView()
+            //AddNotificationView()*/
+        //CircleTimerView(secondsToNotify: 1000, displayDate: Date(timeIntervalSinceNow: 60 * 60 * 24))
+            //this value is propably souvisis s polu tazke to musi davat smysl
+            
+
         }
     }
 }

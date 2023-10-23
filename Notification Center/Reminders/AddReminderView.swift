@@ -32,7 +32,6 @@ struct AddReminderView: View {
                 }, label: {
                     Text("Add")
                 })
-                
                 .alert(isPresented: $wasSuccesful) {
                     
                     Alert(title: Text("Reminder"),
@@ -49,6 +48,7 @@ struct AddReminderView: View {
 
 
             }
+            
             .navigationTitle("Add Reminder")
         }
     }

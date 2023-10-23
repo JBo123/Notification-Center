@@ -30,6 +30,7 @@ struct ChoseNotificationView: View {
                 Spacer()
 
                 Picker("Chose notification Type", selection: $selectedView, content: {
+                    Text("Chose Here...").tag(0)
                     Text("By Time").tag(1)
                     Text("By Date").tag(2)
                     Text("By Location").tag(3)
@@ -38,24 +39,39 @@ struct ChoseNotificationView: View {
                 .padding(20)
                 
                 Button("Add Notification") {
-                    
+                /*
                     switch selectedView {
+
                     case 1:
-                      ViewToPopOver = AnyView(NotificationBasedOnTimeView(notificationList: notificationList))
+                        ViewToPopOver = AnyView(NotificationBasedOnTimeView(notificationList: notificationList, present: $present))
                     case 2:
                         ViewToPopOver = AnyView(NotificationBasedOnDateView())
                     case 3:
                         ViewToPopOver = AnyView(NotificationBasedOnLocationView())
                     default:
-                        ViewToPopOver = AnyView(NotificationBasedOnTimeView(notificationList: notificationList))
+                        ViewToPopOver = AnyView(NotificationBasedOnTimeView(notificationList: notificationList, present: $present))
                     }
+                    */
+                  // print(ViewToPopOver)
+                        present.toggle()
                     
-                    present.toggle()
-                    print(currentDate.timeIntervalSinceNow)
+                  //  print(currentDate.timeIntervalSinceNow)
+                    
                 }
+                .disabled( selectedView == 0)
                 .padding()
                 .popover(isPresented: $present, content: {
-                    ViewToPopOver
+                    switch selectedView {
+
+                    case 1:
+                        NotificationBasedOnTimeView(notificationList: notificationList, present: $present)
+                    case 2:
+                       NotificationBasedOnDateView()
+                    case 3:
+                        NotificationBasedOnLocationView()
+                    default:
+                        NotificationBasedOnTimeView(notificationList: notificationList, present: $present)
+                    }
                 })
                 
                 NavigationLink {

@@ -48,6 +48,9 @@
 		6E92A7282ADC7E9C009C6370 /* NotificationBasedOnLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92A7272ADC7E9C009C6370 /* NotificationBasedOnLocationView.swift */; };
 		6E92A72A2ADD24E5009C6370 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92A7292ADD24E5009C6370 /* NotificationManager.swift */; };
 		6EB4767D2AE430390034007C /* LocalSaveNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB4767C2AE430390034007C /* LocalSaveNotifications.swift */; };
+		6EEDE6012AE662CA00292882 /* dateAndTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEDE6002AE662CA00292882 /* dateAndTime.swift */; };
+		6EEDE6032AE6DE5E00292882 /* 2CircleTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEDE6022AE6DE5E00292882 /* 2CircleTimerView.swift */; };
+		6EEDE6052AE6E5DC00292882 /* DetailNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEDE6042AE6E5DC00292882 /* DetailNotificationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +111,9 @@
 		6E92A7272ADC7E9C009C6370 /* NotificationBasedOnLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBasedOnLocationView.swift; sourceTree = "<group>"; };
 		6E92A7292ADD24E5009C6370 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		6EB4767C2AE430390034007C /* LocalSaveNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSaveNotifications.swift; sourceTree = "<group>"; };
+		6EEDE6002AE662CA00292882 /* dateAndTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateAndTime.swift; sourceTree = "<group>"; };
+		6EEDE6022AE6DE5E00292882 /* 2CircleTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2CircleTimerView.swift; sourceTree = "<group>"; };
+		6EEDE6042AE6E5DC00292882 /* DetailNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNotificationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,13 +148,11 @@
 		6E5F313B2ABC4821006CA169 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				6EB4767B2AE430000034007C /* DataSave */,
-				6E92A7172AD68FFB009C6370 /* Timer */,
-				6E5F313D2ABC48DA006CA169 /* Notification.swift */,
+				6EB4767B2AE430000034007C /* Logic */,
 				6E5F31392ABC3D61006CA169 /* OldAddNotificationView.swift */,
 				6E92A7152AD3E3A4009C6370 /* ShowNotificationView.swift */,
 				6E92A71A2AD69B85009C6370 /* ChoseNotificationView.swift */,
-				6E92A7292ADD24E5009C6370 /* NotificationManager.swift */,
+				6EEDE6042AE6E5DC00292882 /* DetailNotificationView.swift */,
 				6E92A7222ADC7E10009C6370 /* PopoverViews */,
 			);
 			path = Notifications;
@@ -190,8 +194,9 @@
 				6E92A7092AD06C82009C6370 /* Reminders */,
 				6E5F313C2ABC4853006CA169 /* Authentication */,
 				6E5F313B2ABC4821006CA169 /* Notifications */,
-				6E71978D2AB820B300DFB39F /* Notification_CenterApp.swift */,
+				6E92A7172AD68FFB009C6370 /* Timer */,
 				6E71978F2AB820B300DFB39F /* ContentView.swift */,
+				6E71978D2AB820B300DFB39F /* Notification_CenterApp.swift */,
 				6E7197912AB820B400DFB39F /* Assets.xcassets */,
 				6E7197932AB820B400DFB39F /* Preview Content */,
 				6E71979D2AB9AA9E00DFB39F /* GoogleService-Info.plist */,
@@ -258,7 +263,9 @@
 		6E92A7172AD68FFB009C6370 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				6EEDE6002AE662CA00292882 /* dateAndTime.swift */,
 				6E92A7182AD69025009C6370 /* CircleTimerView.swift */,
+				6EEDE6022AE6DE5E00292882 /* 2CircleTimerView.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -282,12 +289,14 @@
 			path = PopoverViews;
 			sourceTree = "<group>";
 		};
-		6EB4767B2AE430000034007C /* DataSave */ = {
+		6EB4767B2AE430000034007C /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				6E92A7292ADD24E5009C6370 /* NotificationManager.swift */,
+				6E5F313D2ABC48DA006CA169 /* Notification.swift */,
 				6EB4767C2AE430390034007C /* LocalSaveNotifications.swift */,
 			);
-			path = DataSave;
+			path = Logic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EEDE6012AE662CA00292882 /* dateAndTime.swift in Sources */,
 				6EB4767D2AE430390034007C /* LocalSaveNotifications.swift in Sources */,
 				6E7197902AB820B300DFB39F /* ContentView.swift in Sources */,
 				6E7197B52AB9AD5900DFB39F /* registerView.swift in Sources */,
@@ -417,12 +427,14 @@
 				6E92A7242ADC7E70009C6370 /* NotificationBasedOnTimeView.swift in Sources */,
 				6E92A71E2ADADE7B009C6370 /* emailTextFieldViewModifier.swift in Sources */,
 				6E71979C2AB821E600DFB39F /* loginView.swift in Sources */,
+				6EEDE6052AE6E5DC00292882 /* DetailNotificationView.swift in Sources */,
 				6E92A7142AD2B74D009C6370 /* HomeView.swift in Sources */,
 				6E92A71B2AD69B85009C6370 /* ChoseNotificationView.swift in Sources */,
 				6E71978E2AB820B300DFB39F /* Notification_CenterApp.swift in Sources */,
 				6E92A7202ADC0F35009C6370 /* customButtonViewModifier.swift in Sources */,
 				6E92A70F2AD06E13009C6370 /* LocalSaveReminders.swift in Sources */,
 				6E5F313A2ABC3D61006CA169 /* OldAddNotificationView.swift in Sources */,
+				6EEDE6032AE6DE5E00292882 /* 2CircleTimerView.swift in Sources */,
 				6E92A7112AD07C28009C6370 /* AddReminderView.swift in Sources */,
 				6E92A7192AD69025009C6370 /* CircleTimerView.swift in Sources */,
 				6E92A7012ACECA46009C6370 /* NotificationWidget.intentdefinition in Sources */,
