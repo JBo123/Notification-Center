@@ -38,6 +38,10 @@ struct ShowNotificationView: View {
                         Text("")
                     })
                 }
+                
+            }
+            .onAppear(){
+                notificationList = returnListOfNotifications()
             }
         }
     }

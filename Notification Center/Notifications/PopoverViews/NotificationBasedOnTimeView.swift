@@ -43,6 +43,7 @@ struct NotificationBasedOnTimeView: View {
                         .plainTextField()
                     
                     Button("Add"){
+                        notificationList = returnListOfNotifications()
                         
                         notificationList.append(Notification(title: title,
                                                              text: text,
