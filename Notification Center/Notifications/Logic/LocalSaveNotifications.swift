@@ -36,4 +36,13 @@ func returnListOfNotifications() -> [Notification] {
     return notifications
 }
 
+func deleteFromListOfNotifications(notificationList: [Notification], indexSet: IndexSet){
+    
+    var notificationList = notificationList
+    notificationList = returnListOfNotifications()
+    notificationList.remove(atOffsets: indexSet)
+    saveListOfNotifications(notificationsList: notificationList)
+    
+}
+
 

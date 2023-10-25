@@ -32,7 +32,7 @@ struct NotificationBasedOnTimeView: View {
                 Section("Pick time and date of the reminder"){
                     DatePicker("Reminder",
                                selection: $inputDate,
-                               in: Date(timeIntervalSinceNow: 10 * 10)...,
+                               in: Date(timeIntervalSinceNow: 20 * 10)...,
                                displayedComponents: [.date, .hourAndMinute])
                     .pickerStyle(WheelPickerStyle())
                     
@@ -43,6 +43,7 @@ struct NotificationBasedOnTimeView: View {
                         .plainTextField()
                     
                     Button("Add"){
+                        print(inputDate)
                         notificationList = returnListOfNotifications()
                         
                         notificationList.append(Notification(title: title,

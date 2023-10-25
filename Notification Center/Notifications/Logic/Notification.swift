@@ -9,11 +9,11 @@ import Foundation
 import UserNotifications
                                                                             //24 hours from now
 var NotificationsDummyList: [Notification] = [
-    Notification(title: "1", date: Date(timeIntervalSinceNow: 60 * 60 * 24)),
-    Notification(title: "2", date: Date(timeIntervalSinceNow: 60 * 60 * 24)),
-    Notification(title: "3", date: Date(timeIntervalSinceNow: 60 * 60 * 24)),
-    Notification(title: "4", date: Date(timeIntervalSinceNow: 60 * 60 * 24)),
-    Notification(title: "5", date: Date(timeIntervalSinceNow: 60 * 60 * 24))
+    Notification(title: "1", date: Date(timeIntervalSinceNow: 600 * 60 * 24)),
+    Notification(title: "2", date: Date(timeIntervalSinceNow: 600 * 60 * 24)),
+    Notification(title: "3", date: Date(timeIntervalSinceNow: 600 * 60 * 24)),
+    Notification(title: "4", date: Date(timeIntervalSinceNow: 600 * 60 * 24)),
+    Notification(title: "5", date: Date(timeIntervalSinceNow: 600 * 60 * 24))
 ]
 
 class Notification: Identifiable, ObservableObject, Codable {

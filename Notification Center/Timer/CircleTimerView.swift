@@ -31,7 +31,6 @@ struct CircleTimerView: View {
                         lineWidth: 15)
                         .frame(width: 120)
                         .padding([.bottom, .top])
-                        //.padding(.top)
                     
                     Circle()
                         .trim(from: progressBarValue, to: 1)
@@ -39,8 +38,6 @@ struct CircleTimerView: View {
                         .rotationEffect(.degrees(-90))
                         .frame(width: 120)
                         .padding([.bottom, .top])
-                       // .padding(.bottom)
-
                     
                     VStack{
                         Text(displaySeconds)
